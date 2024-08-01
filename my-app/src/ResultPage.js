@@ -8,7 +8,7 @@ const ResultPage = () => {
 
   return (
     <div>
-      <h2>Scanned Data Results</h2>
+      <h2>รหัสถังที่ท่านแสกน</h2>
       {data.length > 0 ? (
         <ul>
           {data.map((item, index) => (

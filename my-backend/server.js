@@ -49,6 +49,39 @@ app.get('/api/data/:result', (req, res) => {
   });
 });
 
+app.get('/api/fire-extinguishers', (req, res) => {
+  const query = 'SELECT * FROM fire_extinguisher';
+  connection.query(query, (err, results) => {
+    if (err) {
+      console.error('Error executing query:', err);
+      return res.status(500).json({ error: 'Error retrieving data' });
+    }
+    console.log('Data retrieved:', results);
+    res.json(results);
+  });
+});
+
+app.get('/api/search', (req, res) => {
+  const searchTerm = req.query.q; // รับคำค้นหาจาก query string
+  if (!searchTerm) {
+    return res.status(400).json({ error: 'Search term is required' });
+  }
+
+  // ปรับปรุง query เพื่อค้นหาข้อมูลตามคำค้นหา
+  const query = 'SELECT * FROM fire_extinguisher WHERE FCODE LIKE ? OR F_located LIKE ?';
+  const searchQuery = `%${searchTerm}%`;
+
+  connection.query(query, [searchQuery, searchQuery], (err, results) => {
+    if (err) {
+      console.error('Error executing query:', err);
+      return res.status(500).json({ error: 'Error retrieving data' });
+    }
+    console.log('Data retrieved:', results);
+    res.json(results);
+  });
+});
+
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });
