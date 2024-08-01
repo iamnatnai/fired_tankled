@@ -17,12 +17,13 @@ const ResultPage = () => {
               <strong>รหัสตู้สายน้ำดับเพลิง: </strong> {item.F_water}<br />
               <strong>สถานที่ติดตั้ง: </strong> {item.F_located}
               <div>
-                  <img 
-                    src={`http://localhost:5000${item.imagePath}`} 
-                    alt={item.image_path} 
-                    style={{ maxWidth: '200px', maxHeight: '200px' }} 
-                  />
-                  </div>
+                <img 
+                  src={`http://localhost:5000${item.image_path}`} 
+                  alt={item.FCODE} 
+                  style={{ maxWidth: '200px', maxHeight: '200px' }} 
+                />
+              </div>
+              <p>{item.image_path}</p>
             </li>
           ))}
         </ul>
