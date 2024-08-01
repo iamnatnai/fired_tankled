@@ -6,13 +6,13 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* Ensure the content and navbar stack vertically */
   height: 100vh;
-  overflow: hidden; /* หลีกเลี่ยงการเลื่อน */
+  overflow: hidden; /* Avoid scrolling */
 }
 
 .App {
+  flex: 1; /* Take up remaining space above the navbar */
   width: 100%;
   max-width: 800px;
   background-color: #fff;
@@ -26,8 +26,11 @@ nav {
   color: #000000;
   padding: 1rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 nav ul {
@@ -64,6 +67,7 @@ h1 {
 
 .content {
   padding: 2rem;
+  flex: 1; /* Make sure content area expands to fill available space */
 }
 
 div {
