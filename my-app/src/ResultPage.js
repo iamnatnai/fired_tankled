@@ -1,10 +1,14 @@
-// ResultPage.js
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const ResultPage = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const { data } = location.state || { data: [] };
+
+  const handleViewStatus = (item) => {
+    navigate('/fire-extinguisher-status', { state: { item } });
+  };
 
   return (
     <div>
@@ -13,9 +17,6 @@ const ResultPage = () => {
         <ul>
           {data.map((item, index) => (
             <li key={index}>
-              <strong>รหัสถังดับเพลิง: </strong> {item.FCODE}<br />
-              <strong>รหัสตู้สายน้ำดับเพลิง: </strong> {item.F_water}<br />
-              <strong>สถานที่ติดตั้ง: </strong> {item.F_located}
               <div>
                 <img 
                   src={`http://localhost:5000${item.image_path}`} 
@@ -23,6 +24,12 @@ const ResultPage = () => {
                   style={{ maxWidth: '200px', maxHeight: '200px' }} 
                 />
               </div>
+              <div>
+                <strong>รหัสถังดับเพลิง: </strong> {item.FCODE}<br />
+                <strong>รหัสตู้สายน้ำดับเพลิง: </strong> {item.F_water}<br />
+                <strong>สถานที่ติดตั้ง: </strong> {item.F_located}
+              </div>
+              <button onClick={() => handleViewStatus(item)}>ดูสถานะถัง</button>
               <p>{item.image_path}</p>
             </li>
           ))}

@@ -4,6 +4,7 @@ import Navbar from './navbar';
 import Scanner from './Scanner';
 import Home from './home';
 import ResultPage from './ResultPage';
+import FireExtinguisherStatus from './FireExtinguisherStatus';
 import './App.css';
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/scanner" element={<Scanner />} />
             <Route path="/result" element={<ResultPage />} />
+            <Route path="/fire-extinguisher-status" element={<FireExtinguisherStatus />} />
           </Routes>
         </div>
       </div>
