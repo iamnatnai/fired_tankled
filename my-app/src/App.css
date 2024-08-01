@@ -1,0 +1,93 @@
+/* App.css */
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* หลีกเลี่ยงการเลื่อน */
+}
+
+.App {
+  width: 100%;
+  max-width: 800px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+nav {
+  background-color: #007bff;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  margin-right: 1rem;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #dfe2e6;
+}
+
+h1 {
+  color: #333;
+  margin: 20px 0;
+  font-size: 2rem;
+}
+
+.content {
+  padding: 2rem;
+}
+
+div {
+  text-align: center;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.Scanner {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+pre {
+  text-align: left;
+  background-color: #f1f1f1;
+  padding: 1rem;
+  border-radius: 5px;
+  overflow-x: auto;
+}

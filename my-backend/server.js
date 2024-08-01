@@ -1,0 +1,50 @@
+const express = require('express');
+const mysql = require('mysql2');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+
+const app = express();
+const port = 5000;
+
+app.use(cors());
+app.use(bodyParser.json());
+
+// Create a connection to the database
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'fired_data'
+});
+
+connection.connect((err) => {
+  if (err) {
+    console.error('Error connecting to the database:', err);
+    return;
+  }
+  console.log('Connected to the database');
+});
+
+// Route to get data based on the result
+app.get('/api/data/:result', (req, res) => {
+  const { result } = req.params;
+  console.log('Received result for query:', result);
+
+  const query = 'SELECT * FROM fire_extinguisher WHERE FCODE = ?';
+  connection.query(query, [result], (err, results) => {
+    if (err) {
+      console.error('Error executing query:', err);
+      return res.status(500).json({ error: 'Error retrieving data' });
+    }
+    if (results.length === 0) {
+      console.log('No data found for result:', result);
+      return res.status(404).json({ error: 'No data found' });
+    }
+    console.log('Data retrieved:', results);
+    res.json(results);
+  });
+});
+
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+});
