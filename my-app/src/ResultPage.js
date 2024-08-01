@@ -1,5 +1,6 @@
-import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import React from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import "./Home.css";
 
 const ResultPage = () => {
   const location = useLocation();
@@ -7,26 +8,28 @@ const ResultPage = () => {
   const { data } = location.state || { data: [] };
 
   const handleViewStatus = (item) => {
-    navigate('/fire-extinguisher-status', { state: { item } });
+    navigate("/fire-extinguisher-status", { state: { item } });
   };
 
   return (
-    <div>
+    <div className="home-container">
       <h2>รหัสถังที่ท่านแสกน</h2>
       {data.length > 0 ? (
         <ul>
           {data.map((item, index) => (
-            <li key={index}>
+            <li key={index} className="task-item">
               <div>
-                <img 
-                  src={`http://localhost:5000${item.image_path}`} 
-                  alt={item.FCODE} 
-                  style={{ maxWidth: '200px', maxHeight: '200px' }} 
+                <img
+                  src={`http://localhost:5000${item.image_path}`}
+                  alt={item.FCODE}
+                  style={{ maxWidth: "200px", maxHeight: "200px" }}
                 />
               </div>
-              <div>
-                <strong>รหัสถังดับเพลิง: </strong> {item.FCODE}<br />
-                <strong>รหัสตู้สายน้ำดับเพลิง: </strong> {item.F_water}<br />
+              <div className="task-details">
+                <strong>รหัสถังดับเพลิง: </strong> {item.FCODE}
+                <br />
+                <strong>รหัสตู้สายน้ำดับเพลิง: </strong> {item.F_water}
+                <br />
                 <strong>สถานที่ติดตั้ง: </strong> {item.F_located}
               </div>
               <button onClick={() => handleViewStatus(item)}>ดูสถานะถัง</button>

@@ -1,7 +1,7 @@
 /* App.css */
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #ffb1f9;
   margin: 0;
   padding: 0;
@@ -71,27 +71,7 @@ h1 {
 }
 
 div {
-  text-align: center;
-  border-radius: 10px;
-  padding: 20px;
-  background-color: #fff;
-}
-
-.Scanner {
-  width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  background-color: #f1f1f1;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-pre {
-  text-align: left;
-  background-color: #f1f1f1;
-  padding: 1rem;
-  border-radius: 5px;
-  overflow-x: auto;
+  border-radius: 40px;
+  padding: 0px;
+  background-color: #ffffff;
 }

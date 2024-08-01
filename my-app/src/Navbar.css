@@ -1,0 +1,35 @@
+/* Navbar.css */
+.navbar {
+  background-color: #4120b6;
+  padding: 10px;
+  position: fixed;
+  bottom: 60px; /* ระยะห่างจากด้านล่างของหน้าจอ */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-list {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-item a {
+  text-decoration: none;
+  color: #791a8b;
+  font-weight: bold;
+}
+
+.navbar-item a:hover {
+  color: #991f99;
+}
+
+.bottom-navigation {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff; /* สามารถเปลี่ยนสีได้ตามต้องการ */
+}
