@@ -30,7 +30,7 @@ const Navbar = () => {
       >
         <BottomNavigationAction label="Scanner" icon={<QrCodeScannerIcon />} />
         <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-        <BottomNavigationAction label="MAP" icon={<LocationOnIcon />} />
+        <BottomNavigationAction label="LAYER" icon={<LocationOnIcon />} />
       </BottomNavigation>
     </Box>
   );

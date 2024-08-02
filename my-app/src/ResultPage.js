@@ -1,5 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import "./Home.css";
 
 const ResultPage = () => {
@@ -32,7 +34,9 @@ const ResultPage = () => {
                 <br />
                 <strong>สถานที่ติดตั้ง: </strong> {item.F_located}
               </div>
-              <button onClick={() => handleViewStatus(item)}>ดูสถานะถัง</button>
+              <Button variant="contained" size="large" onClick={() => handleViewStatus(item)}>
+                ดูสถานะถัง
+              </Button>
               <p>{item.image_path}</p>
             </li>
           ))}

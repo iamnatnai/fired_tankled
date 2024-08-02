@@ -1,4 +1,3 @@
-// FireExtinguisherStatus.js
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 
@@ -10,11 +9,14 @@ const FireExtinguisherStatus = () => {
   const [pressure, setPressure] = useState('yes');
   const [hose, setHose] = useState('yes');
   const [body, setBody] = useState('yes');
+  const [image, setImage] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log({ date, seal, pressure, hose, body });
+    // Handle form submission logic here, including image file
+    console.log({ date, seal, pressure, hose, body, image });
+
+    // You may want to handle file upload here, e.g., sending the file to a server
   };
 
   return (
@@ -120,6 +122,14 @@ const FireExtinguisherStatus = () => {
             />
             No
           </label>
+        </div>
+        <div>
+          <label>รูปถังดับเพลิง:</label>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={(e) => setImage(e.target.files[0])}
+          />
         </div>
         <button type="submit">Submit</button>
       </form>
